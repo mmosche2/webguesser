@@ -1,8 +1,25 @@
 <html>
   <head></head>
   <body>
-    <p>
-      The SECRET NUMBER is <%= random_number %>
-    </p>
+  	<form>
+		  <input type='text' name='guess' />
+		  <input type='submit' value='Guess!' />
+		</form>
+    <% if guess != 0 %>
+	    <% if guess == random_number %>
+	    	<p>You got it correct! Good job!</p>
+	    	<p>
+      		The SECRET NUMBER is <%= random_number %>
+    		</p>
+	    <% elsif guess > (random_number+5) %>
+	    	<p>Way too high!</p>
+	    <% elsif guess > random_number %>
+	    	<p>You guessed too high</p>
+	    <% elsif guess < (random_number-5) %>
+	    	<p>Way too low!</p>
+	    <% elsif guess < random_number %>
+	    	<p>You guessed too low</p>
+	    <% end %>
+	  <% end %>
   </body>
 </html>
