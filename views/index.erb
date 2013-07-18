@@ -7,11 +7,14 @@
     </style>
   </head>
   <body>
-  	<%= random_number %>
+  	<% if cheat_mode == "true" %>
+  		<p>Cheat mode enabled! The secret number is <%= random_number %></p>
+  	<% end %>
   	<form>
 		  <input type='text' name='guess' />
 		  <input type='submit' value='Guess!' />
 		</form>
+		<p>Guesses remaining: <%= count %></p>
      <%= message %>
   </body>
 </html>
